@@ -21,6 +21,10 @@ export interface TopicMeta {
   title: string;
   strand: Strand;
   icon: string;
+  /** Which IB Diploma year normally finishes this topic (1 = DP1 / Year 12, 2 = DP2 / Year 13). */
+  dpYear: 1 | 2;
+  /** Teaching/revision order used when ?dp=2 is active (DP2 first, then DP1). */
+  dpOrder: number;
   level: IBLevel;
   curriculum: string;
   sections: SectionPlan[];
@@ -40,6 +44,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Topic 1: The 6 Core Concepts, Research Methods & Class Practicals",
     strand: "Concepts & Core Foundations",
     icon: "🧭",
+    dpYear: 1,
+    dpOrder: 5,
     level: "SL",
     curriculum: "IB Psychology FA2027: 6 Core Concepts (Bias, Causality, Change, Measurement, Perspective, Responsibility) & 4 Class Practicals (Paper 2)",
     sections: [
@@ -74,6 +80,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Topic 2: Core Content Foundations — Biological, Cognitive & Sociocultural",
     strand: "Concepts & Core Foundations",
     icon: "🧠",
+    dpYear: 1,
+    dpOrder: 6,
     level: "SL",
     curriculum: "IB Psychology FA2027 Core Content: Biological, Cognitive & Sociocultural Approaches (Paper 1 Sec A Foundations)",
     sections: [
@@ -110,6 +118,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Topic 3: Context 1 — Health and Well-being",
     strand: "Contexts I: Health & Development",
     icon: "💚",
+    dpYear: 1,
+    dpOrder: 7,
     level: "SL",
     curriculum: "IB Psychology FA2027 Compulsory Context 1: Mental Health, Physical Health, Stress, Addiction & Interventions",
     sections: [
@@ -144,6 +154,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Topic 4: Context 2 — Human Development",
     strand: "Contexts I: Health & Development",
     icon: "🌱",
+    dpYear: 1,
+    dpOrder: 8,
     level: "SL",
     curriculum: "IB Psychology FA2027 Compulsory Context 2: Lifespan Brain/Cognitive Development, Attachment, Identity & Resilience",
     sections: [
@@ -180,6 +192,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Topic 5: Context 3 — Human Relationships",
     strand: "Contexts II: Relationships & Learning",
     icon: "🤝",
+    dpYear: 2,
+    dpOrder: 1,
     level: "SL",
     curriculum: "IB Psychology FA2027 Compulsory Context 3: Interpersonal Attraction, Maintenance/Breakdown, Prosociality & Prejudice",
     sections: [
@@ -214,6 +228,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Topic 6: Context 4 — Learning and Cognition",
     strand: "Contexts II: Relationships & Learning",
     icon: "📚",
+    dpYear: 2,
+    dpOrder: 2,
     level: "SL",
     curriculum: "IB Psychology FA2027 Compulsory Context 4: Conditioning, Synaptic Plasticity, Cognitive Load, Reasoning & Memory Reliability",
     sections: [
@@ -250,6 +266,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Topic 7: HL Extensions — Culture, Motivation & Technology",
     strand: "HL Extensions & Paper 3",
     icon: "🌐",
+    dpYear: 2,
+    dpOrder: 3,
     level: "HL",
     curriculum: "IB Psychology FA2027 HL Extensions (Culture, Motivation, Technology) integrated across Biological, Cognitive & Sociocultural approaches",
     sections: [
@@ -284,6 +302,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Topic 8: HL Paper 3 — Research Data Analysis & Source Evaluation",
     strand: "HL Extensions & Paper 3",
     icon: "📈",
+    dpYear: 2,
+    dpOrder: 4,
     level: "HL",
     curriculum: "IB Psychology FA2027 HL Paper 3 (1h 45m, 30 marks, 30%): Quantitative & Qualitative Source Analysis linked to Culture, Motivation & Technology",
     sections: [
